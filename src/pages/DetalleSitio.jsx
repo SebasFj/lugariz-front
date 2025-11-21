@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Card from "../components/Card/card";
+import Card from "../components/Card/Card.jsx";
 import "./DetalleSitio.css";
 import Loading from "../components/loading/Loading";
 import {API_URL} from "../config/api.js"

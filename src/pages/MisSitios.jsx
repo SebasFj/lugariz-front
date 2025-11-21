@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "../components/Card/card";
+import Card from "../components/Card/Card.jsx";
 import "./MisSitios.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

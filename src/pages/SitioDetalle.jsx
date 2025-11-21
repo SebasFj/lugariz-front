@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./SitioDetalle.css";
-import Card from "../components/Card/card";
+import Card from "../components/Card/Card.jsx";
 import Loading from "../components/loading/Loading";
 import { useSelector } from "react-redux";
 import axios from "axios";
