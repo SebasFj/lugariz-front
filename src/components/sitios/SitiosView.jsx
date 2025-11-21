@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { updateUser } from "../../features/auth/authSlice.js";
+import {API_URL} from "../../config/api.js"
 
 export default function SitiosView({ fav }) {
   const [data, setData] = useState([]);
@@ -34,8 +35,8 @@ export default function SitiosView({ fav }) {
   async function fetchData() {
     try {
       const [sitiosRes, categoriasRes] = await Promise.all([
-        fetch("http://localhost:5000/api/sitios/get/activos"),
-        fetch("http://localhost:5000/api/categorias"),
+        fetch(`${API_URL}/api/sitios/get/activos`),
+        fetch(`${API_URL}/api/categorias`),
       ]);
       let sitiosJson = await sitiosRes.json();
       const categoriasJson = await categoriasRes.json();
@@ -136,7 +137,7 @@ export default function SitiosView({ fav }) {
     if (!user) return alert("Debes iniciar sesión para dar like");
     try {
       const like = await axios.post(
-        `http://localhost:5000/api/likes/${user.id}/${id_sitio}`
+        `${API_URL}/api/likes/${user.id}/${id_sitio}`
       );
       const new_data = [...data];
       for (let sitio of new_data) {
@@ -165,7 +166,7 @@ export default function SitiosView({ fav }) {
     if (!user) return alert("Debes iniciar sesión para agregar a favoritos");
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/favoritos/${user.id}/${id_sitio}`
+        `${API_URL}/api/favoritos/${user.id}/${id_sitio}`
       );
       const newUser = {
         ...user,
@@ -187,7 +188,7 @@ export default function SitiosView({ fav }) {
   const handleCalificar = async (id_sitio, rating) => {
     try {
       const nuevo_rating = await axios.post(
-        "http://localhost:5000/api/sitios/calificar",
+        `${API_URL}/api/sitios/calificar`,
         {
           id_sitio,
           id_usuario: user.id,

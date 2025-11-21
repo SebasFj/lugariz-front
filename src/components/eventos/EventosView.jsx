@@ -4,6 +4,7 @@ import "./EventosView.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import {API_URL} from "../../config/api.js"
 
 export const EventosView = () => {
   const [data, setData] = useState([]);
@@ -20,7 +21,7 @@ export const EventosView = () => {
     async function fetchEventos() {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/eventos/get/activos"
+          `${API_URL}/api/eventos/get/activos`
         );
         const json = await res.json();
         setData(json);

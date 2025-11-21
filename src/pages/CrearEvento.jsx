@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "./CrearEvento.css";
+import {API_URL} from "../config/api.js"
 
 export const CrearEvento = () => {
   const { id, id_evento } = useParams(); // id del sitio y del evento
@@ -26,7 +27,7 @@ export const CrearEvento = () => {
     if (modoEdicion && id_evento) {
       const fetchEvento = async () => {
         try {
-          const res = await fetch(`http://localhost:5000/api/eventos/${id_evento}`);
+          const res = await fetch(`${API_URL}/api/eventos/${id_evento}`);
           const data = await res.json();
           if (res.ok) {
             setFormData({
@@ -62,8 +63,8 @@ export const CrearEvento = () => {
 
     try {
       const url = modoEdicion
-        ? `http://localhost:5000/api/eventos/${id_evento}/update`
-        : `http://localhost:5000/api/eventos/create`;
+        ? `${API_URL}/api/eventos/${id_evento}/update`
+        : `${API_URL}/api/eventos/create`;
 
       const method = modoEdicion ? "PUT" : "POST";
 

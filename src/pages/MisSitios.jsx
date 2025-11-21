@@ -3,6 +3,7 @@ import Card from "../components/Card/card";
 import "./MisSitios.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import {API_URL} from "../config/api.js"
 
 const SitiosUsuario = () => {
 
@@ -17,7 +18,7 @@ const SitiosUsuario = () => {
   // 🔹 Cargar los sitios del usuario desde el backend
     const fetchSitios = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/usuarios/${user.id}/sitios`);
+        const res = await fetch(`${API_URL}/api/usuarios/${user.id}/sitios`);
         const data = await res.json();
         setSitios(data);
       } catch (err) {
@@ -60,7 +61,7 @@ const SitiosUsuario = () => {
 
   const handlePausar = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/sitios/${id}/state`, {
+      const res = await fetch(`${API_URL}/api/sitios/${id}/state`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
       });

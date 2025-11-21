@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Loading from "../components/loading/Loading";
 import "./DetalleEvento.css";
+import {API_URL} from "../config/api.js"
 
 export const DetalleEvento = () => {
   const { id, id_evento } = useParams();
@@ -13,7 +14,7 @@ export const DetalleEvento = () => {
   useEffect(() => {
     const fetchEvento = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/eventos/${id_evento}`);
+        const res = await fetch(`${API_URL}/api/eventos/${id_evento}`);
         const data = await res.json();
         setEvento(data);
       } catch (error) {
@@ -29,7 +30,7 @@ export const DetalleEvento = () => {
   const finalizarEvento = async () => {
     if (!window.confirm("¿Deseas finalizar este evento?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/eventos/${id_evento}/state`, {
+      const res = await fetch(`${API_URL}/api/eventos/${id_evento}/state`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
       });

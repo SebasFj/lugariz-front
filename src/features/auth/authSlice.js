@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { auth, googleProvider, facebookProvider } from "../../firebase/config";
 import { signInWithPopup, signOut } from "firebase/auth";
+import {API_URL} from "../../config/api.js"
 
 // Helper: enviar datos al backend
 const sendToBackend = async (user) => {
@@ -11,7 +12,7 @@ const sendToBackend = async (user) => {
     foto: user.photoURL || "",
   };
 
-  const res = await fetch("http://localhost:5000/api/usuarios/login", {
+  const res = await fetch(`${API_URL}/api/usuarios/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import "./CrearSitio.css";
+import {API_URL} from "../config/api.js"
 
 const CrearSitio = () => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const CrearSitio = () => {
   useEffect(() => {
     const fetchCategorias = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/categorias");
+        const res = await fetch(`${API_URL}/api/categorias`);
         const data = await res.json();
         if (!data.length) throw new Error(data.message);
         setCategorias(data);
@@ -68,7 +69,7 @@ const CrearSitio = () => {
     if (!id) return;
     const fetchSitio = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/sitios/${id}`);
+        const res = await fetch(`${API_URL}/api/sitios/${id}`);
         if (!res.ok) throw new Error(`Error al obtener el sitio (${res.status})`);
         const data = await res.json();
 
@@ -145,8 +146,8 @@ const CrearSitio = () => {
     setLoading(true);
 
     const endpoint = id
-      ? `http://localhost:5000/api/sitios/update/${id}`
-      : "http://localhost:5000/api/sitios/crear";
+      ? `${API_URL}/api/sitios/update/${id}`
+      : `${API_URL}/api/sitios/crear`;
 
     const method = id ? "PUT" : "POST";
 

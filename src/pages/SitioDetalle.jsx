@@ -5,6 +5,7 @@ import Card from "../components/Card/card";
 import Loading from "../components/loading/Loading";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import {API_URL} from "../config/api.js"
 
 export const SitioDetalle = () => {
   const { id_sitio } = useParams();
@@ -16,7 +17,7 @@ export const SitioDetalle = () => {
   const {user} = useSelector((state)=>state.auth)
   const fetchSitio = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/sitios/${id_sitio}`);
+      const res = await fetch(`${API_URL}/api/sitios/${id_sitio}`);
       const data = await res.json();
       setSitio(data);
     } catch (error) {
@@ -44,7 +45,7 @@ export const SitioDetalle = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/comentarios/post/${user.id}/${id_sitio}`,
+        `${API_URL}/api/comentarios/post/${user.id}/${id_sitio}`,
         { comentario: texto }
       );
 

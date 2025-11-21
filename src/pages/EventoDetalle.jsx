@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./EventoDetalle.css";
 import Loading from "../components/loading/Loading";
+import {API_URL} from "../config/api.js"
 
 export const EventoDetalle = () => {
   const { id_evento } = useParams();
@@ -13,7 +14,7 @@ export const EventoDetalle = () => {
   useEffect(() => {
     const fetchEvento = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/eventos/${id_evento}`);
+        const res = await fetch(`${API_URL}/api/eventos/${id_evento}`);
         const data = await res.json();
         setEvento(data);
       } catch (error) {

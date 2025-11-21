@@ -4,6 +4,7 @@ import axios from "axios";
 import "./Perfil.css"; // estilos opcionales
 import Loading from "../components/loading/Loading.jsx"
 import { updateUser } from "../features/auth/authSlice.js";
+import {API_URL} from "../config/api.js"
 
 
 const Perfil = () => {
@@ -25,8 +26,8 @@ const Perfil = () => {
     const fetchDropdowns = async () => {
       try {
         const [resGeneros, resEstados] = await Promise.all([
-          axios.get("http://localhost:5000/api/generos/get"),
-          axios.get("http://localhost:5000/api/estado_civil/get"),
+          axios.get(`${API_URL}/api/generos/get`),
+          axios.get(`${API_URL}/api/estado_civil/get`),
         ]);
         setGeneros(resGeneros.data);
         setEstadosCiviles(resEstados.data);
@@ -70,7 +71,7 @@ const Perfil = () => {
     }
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/usuarios/${user.id}`,
+        `${API_URL}/api/usuarios/${user.id}`,
         formData
       );
 

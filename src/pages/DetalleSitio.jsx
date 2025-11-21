@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Card from "../components/Card/card";
 import "./DetalleSitio.css";
 import Loading from "../components/loading/Loading";
+import {API_URL} from "../config/api.js"
 
 export default function DetalleSitio() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ export default function DetalleSitio() {
     const fetchData = async () => {
       try {
         // 1️⃣ Obtener información del sitio
-        const resSitio = await fetch(`http://localhost:5000/api/sitios/${id}`);
+        const resSitio = await fetch(`${API_URL}/api/sitios/${id}`);
         const dataSitio = await resSitio.json();
         setSitio(dataSitio);
         setEventos(dataSitio.eventos);
@@ -37,7 +38,7 @@ export default function DetalleSitio() {
   const toggleEstado = async () => {
     try {
       const nuevoEstado = sitio.Estado.nombre === "Activo" ? "Inactivo" : "Activo";
-      const res = await fetch(`http://localhost:5000/api/sitios/${id}/state`, {
+      const res = await fetch(`${API_URL}/api/sitios/${id}/state`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ estado: nuevoEstado }),
@@ -56,7 +57,7 @@ export default function DetalleSitio() {
 
   const handleFinalizar = async (id_evento) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/eventos/${id_evento}/state`, {
+      const res = await fetch(`${API_URL}/api/eventos/${id_evento}/state`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
