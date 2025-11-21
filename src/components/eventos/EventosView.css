@@ -1,0 +1,67 @@
+.evu-container {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.evu-filtros {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 15px;
+  height: 100px;
+}
+
+.evu-buscador,
+.evu-input-fecha,
+.evu-select-edad {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+.evu-buscador{
+    height: 50px;
+    margin-top: 20px;
+}
+
+.evu-btn-reset {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+.evu-cards-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+.evu-no-result {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #6b7280;
+  font-size: 18px;
+}
+
+
+.edad-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.fecha {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    justify-content: space-around;
+}

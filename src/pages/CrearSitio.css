@@ -1,0 +1,138 @@
+.crear-sitio-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.crear-sitio-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.crear-sitio-form {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.form-left, .form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form-group-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 15px;
+  background: #f8f9fb;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.horario-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dia-label {
+  font-weight: bold;
+  color: #444;
+  text-transform: capitalize;
+}
+
+.horario-inputs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.horario-inputs input {
+  width: 50px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.categorias-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.categoria-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.categoria-btn:hover {
+  background: #e0e0e0;
+}
+
+.categoria-btn.selected {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+}
+
+.btn-submit {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: #125ca0;
+}
+
+.mensaje-exito {
+  color: green;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.mensaje-error {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+}

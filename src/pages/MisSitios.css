@@ -1,0 +1,113 @@
+.mis-sitios-container {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mis-sitios-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mis-sitios-header h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.mis-sitios-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.mis-sitios-actions input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.btn-crear {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-crear:hover {
+  background-color: #218838;
+}
+
+/* 🔹 Grid de 2 columnas, 3 filas visibles */
+.grid-sitios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Hover sobresaliente (aplica a CardItem) */
+.card-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔽 Botón ver más */
+.ver-mas-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.btn-ver-mas {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-ver-mas:hover {
+  background-color: #0056b3;
+}
+
+/* 🔝 Botón flotante volver arriba */
+.btn-scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.btn-scroll-top:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+/* Mensaje cuando no hay sitios */
+.sin-sitios {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 4rem;
+}

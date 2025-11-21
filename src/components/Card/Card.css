@@ -1,0 +1,176 @@
+/* ==== CARD GENERAL ==== */
+.card-item {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 360px;
+  margin: 12px auto;
+  border: solid;
+  border-width: 0.5px;
+}
+
+.card-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* ==== IMAGEN ==== */
+.card-item__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-item__img-wrap:hover .card-item__img {
+  transform: scale(1.05);
+}
+
+/* ==== BODY ==== */
+.card-item__body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ==== TITULO ==== */
+.card-item__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* ==== INFO ==== */
+.card-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card-item__info strong {
+  color: #222;
+}
+
+/* ==== ACCIONES ==== */
+.card-item__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background-color: #005fd1;
+}
+
+/* ==== BTN VARIACIONES ==== */
+.btn--outline {
+  background: transparent;
+  border: 2px solid #0078ff;
+  color: #0078ff;
+}
+
+.btn--outline:hover {
+  background: #0078ff;
+  color: #fff;
+}
+
+.btn--small {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+/* ==== ICONOS ==== */
+.btn--icon {
+  background: #f1f3f5;
+  color: #333;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border: none;
+}
+
+.btn--fav {
+  background: #2088f0;
+  color: #333;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border: none;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.rating{
+  width: 100%;
+  justify-items: left;
+}
+
+.todos{
+  width: 100%;
+}
+
+.btn--icon:hover {
+  background: #e1e5ea;
+  transform: scale(1.1);
+}
+
+
+.btn--fav:hover {
+  background: #005fd1;
+  transform: scale(1.1);
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .card-item {
+    max-width: 100%;
+  }
+
+  .card-item__img-wrap {
+    height: 180px;
+  }
+}

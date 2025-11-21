@@ -1,0 +1,208 @@
+.detalle-sitio-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+/* ---------- ENCABEZADO ---------- */
+.detalle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detalle-header h1 {
+  font-size: 2rem;
+  color: #222;
+  font-weight: 700;
+}
+
+.detalle-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn--primary {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn--outline {
+  background: #fff;
+  border: 2px solid #ccc;
+  color: #333;
+}
+
+.btn--success {
+  background: #2ecc71;
+  color: white;
+}
+
+.btn--small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+/* ---------- SECCIÓN PRINCIPAL: INFO + COMENTARIOS ---------- */
+.detalle-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- INFORMACIÓN DEL SITIO ---------- */
+.detalle-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 1.5;
+}
+
+.detalle-info p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.detalle-lista {
+  margin-top: 1rem;
+}
+
+.detalle-lista h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+.detalle-lista ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detalle-lista li {
+  background: #f8f9fa;
+  margin: 0.2rem 0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+}
+
+/* ---------- COMENTARIOS (A la derecha) ---------- */
+.detalle-comentarios {
+  flex: 1.2;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 0.6rem;
+  padding: 1rem;
+}
+
+.detalle-comentarios h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.comentarios-section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+.comentarios-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comentario-item {
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eaeaea;
+  transition: background 0.2s;
+}
+
+.comentario-item:hover {
+  background: #f0f0f0;
+}
+
+.comentario-item.activo {
+  background: #007bff;
+  color: white;
+  font-weight: 500;
+}
+
+.comentario-detalle {
+  padding: 0.8rem;
+}
+
+.comentario-detalle p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.no-seleccionado,
+.no-comentarios {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+/* ---------- EVENTOS (ABAJO) ---------- */
+.detalle-eventos {
+  margin-top: 2rem;
+}
+
+.detalle-eventos h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.no-eventos {
+  color: #777;
+  font-style: italic;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .detalle-main {
+    flex-direction: column;
+  }
+
+  .detalle-comentarios {
+    width: 100%;
+  }
+}

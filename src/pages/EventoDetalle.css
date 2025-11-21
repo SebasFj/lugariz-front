@@ -1,0 +1,132 @@
+
+/* ==========================================================
+   EventoDetalle.css
+   Estilo inspirado en SitioDetalle
+   ========================================================== */
+
+.evento-detalle {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background-color: #fafafa;
+  padding-bottom: 4rem;
+}
+
+/* Banner */
+.evento-banner {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.evento-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: transform 0.4s ease;
+}
+
+.evento-banner:hover .evento-banner__img {
+  transform: scale(1.03);
+}
+
+.evento-banner__overlay {
+  position: absolute;
+  bottom: 0;
+  padding: 2rem;
+  color: #fff;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.evento-banner__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.evento-banner__rango {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Info general */
+.evento-info {
+  margin: 2rem auto;
+  width: 90%;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+
+.evento-info h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.evento-info__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.evento-info__grid div {
+  background: #f9f9f9;
+  padding: 0.8rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* Lugar */
+.evento-lugar {
+  width: 90%;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.evento-lugar__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.evento-lugar__grid div {
+  background: #f9f9f9;
+  padding: 0.8rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* Botón volver */
+.btn-volver {
+  width: 100px;
+  display: block;
+  margin: 2rem auto 0;
+  background: #222;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-volver:hover {
+  background: #444;
+}
+
+/* Estados */
+.evento-error {
+  text-align: center;
+  padding: 4rem 1rem;
+  font-size: 1.2rem;
+  color: #666;
+}

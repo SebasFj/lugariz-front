@@ -1,0 +1,265 @@
+.sitio-detalle {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background-color: #fafafa;
+  padding-bottom: 4rem;
+}
+
+/* Imagen principal */
+.sitio-banner {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.sitio-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: transform 0.4s ease;
+}
+
+.sitio-banner:hover .sitio-banner__img {
+  transform: scale(1.03);
+}
+
+.sitio-banner__overlay {
+  position: absolute;
+  bottom: 0;
+  padding: 2rem;
+  color: #fff;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.sitio-banner__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sitio-banner__categoria {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Info general */
+.sitio-info {
+  margin: 2rem auto;
+  width: 90%;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+
+.sitio-info h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.sitio-info__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sitio-info__grid div {
+  background: #f9f9f9;
+  padding: 0.8rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* Horarios */
+.sitio-horarios {
+  width: 40%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.ordenar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.ordenar2 {
+    width: 40%;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ordenar3 {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+
+.sitio-horarios table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sitio-horarios th,
+.sitio-horarios td {
+  border-bottom: 1px solid #eee;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.sitio-horarios th {
+  background: #f5f5f5;
+}
+
+/* Comentarios */
+.sitio-comentarios {
+  width: 80%;
+  max-width: 500px;
+  margin: 2rem auto;
+  height: 250px;
+  overflow-y: scroll;
+  margin-left: 100px;
+}
+
+.sitio-comentarios__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comentario-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.comentario-card__img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Eventos */
+.sitio-eventos {
+  width: 90%;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background-color: rgb(207, 205, 203);
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.sitio-eventos h2 {
+    align-items: center;
+}
+
+.sitio-eventos__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 20px; /* separación entre cards */
+}
+
+/* Botón volver */
+.btn-volver {
+  width: 100px;
+  display: block;
+  margin: 2rem auto 0;
+  background: #222;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-volver:hover {
+  background: #444;
+}
+
+/* Estados */
+.sitio-loading,
+.sitio-error {
+  text-align: center;
+  padding: 4rem 1rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.enviar-comentario {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: right;
+}
+
+.comentario-form {
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-right: 20px;
+}
+
+.comentario-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 90px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comentario-form textarea:focus {
+  border-color: #2088f0;
+  box-shadow: 0 0 4px rgba(18, 8, 167, 0.4);
+  outline: none;
+}
+
+.comentario-form button {
+  align-self: flex-end;
+  background-color: #2088f0;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.comentario-form button:hover {
+  background-color: #83b5e8;
+}
+
+.comentario-form button:active {
+  transform: scale(0.97);
+}
+
+.error {
+  color: #d70000;
+  font-size: 0.85rem;
+  margin-top: -6px;
+}
