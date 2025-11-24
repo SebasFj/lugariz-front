@@ -1,55 +1,119 @@
+/* ==========================================================
+   HOME — LAYOUT PRINCIPAL
+   Optimizado sin cambiar estructura JSX
+   ========================================================== */
+
 .home-container {
   display: flex;
   height: 100vh;
   width: 100%;
-  background-color: #f9fafc;
+  background-color: #f4f5f7;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
-/* ---------- SIDEBAR ---------- */
+/* ---------------------- SIDEBAR ---------------------- */
 .sidebar {
   display: flex;
   flex-direction: column;
-  background-color: #1e1e2f;
+  background-color: #1f1f33;
   padding: 1rem;
-  width: 220px;
+  width: 230px;
   min-width: 200px;
   height: 100%;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.15);
+  gap: 0.6rem;
 }
 
 .sidebar-btn {
   background: transparent;
-  color: #d3d3d3;
-  font-size: 1rem;
+  color: #d1d1e0;
+  font-size: 1.1rem;
   text-align: left;
   border: none;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.6rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .sidebar-btn:hover {
-  background-color: #2f2f45;
+  background-color: #2b2b44;
   color: #fff;
+  transform: translateX(3px);
 }
 
 .sidebar-btn.active {
-  background-color: #4a4aff;
+  background-color: #4c52ff;
   color: #fff;
   font-weight: 600;
+  box-shadow: 0 0 10px rgba(76, 82, 255, 0.55);
 }
 
-/* ---------- CONTENIDO PRINCIPAL ---------- */
+/* ---------------------- CONTENIDO PRINCIPAL ---------------------- */
 .content {
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .home-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #333;
+  color: #2b2b2b;
   margin-bottom: 1.5rem;
+}
+
+/* ---------------------- SCROLLBAR PERSONALIZADO ---------------------- */
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #e6e6e6;
+  border-radius: 20px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #b9b9b9;
+  border-radius: 20px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #9d9d9d;
+}
+
+/* ---------------------- RESPONSIVE ---------------------- */
+@media (max-width: 850px) {
+  .home-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 0.7rem;
+    justify-content: space-around;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  }
+
+  .sidebar-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .content {
+    padding: 1.3rem;
+    height: calc(100vh - 70px);
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
 }

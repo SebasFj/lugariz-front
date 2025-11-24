@@ -1,9 +1,10 @@
-
 /* ==========================================================
-   EventoDetalle.css
-   Estilo inspirado en SitioDetalle
+   EventoDetalle.css — Optimización profesional
+   Mantiene estructura original pero mejora responsividad,
+   jerarquía visual, contraste y alineación.
    ========================================================== */
 
+/* CONTENEDOR GENERAL */
 .evento-detalle {
   font-family: "Poppins", sans-serif;
   color: #222;
@@ -11,10 +12,10 @@
   padding-bottom: 4rem;
 }
 
-/* Banner */
+/* ---------------------- BANNER ---------------------- */
 .evento-banner {
   position: relative;
-  height: 340px;
+  height: 360px;
   overflow: hidden;
   border-radius: 0 0 2rem 2rem;
 }
@@ -23,110 +24,143 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(70%);
+  filter: brightness(65%);
   transition: transform 0.4s ease;
 }
 
 .evento-banner:hover .evento-banner__img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .evento-banner__overlay {
   position: absolute;
   bottom: 0;
-  padding: 2rem;
-  color: #fff;
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .evento-banner__title {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
   margin: 0;
 }
 
 .evento-banner__rango {
-  font-size: 1rem;
+  font-size: 1.1rem;
   opacity: 0.9;
 }
 
-/* Info general */
+/* ---------------------- INFO GENERAL ---------------------- */
 .evento-info {
   margin: 2rem auto;
   width: 90%;
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   padding: 2rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
 .evento-info h2 {
   margin-bottom: 1rem;
+  font-size: 1.4rem;
   border-bottom: 2px solid #eee;
   padding-bottom: 0.5rem;
 }
 
+.evento-info p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
 .evento-info__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
 }
 
 .evento-info__grid div {
-  background: #f9f9f9;
-  padding: 0.8rem 1rem;
+  background: #f8f8f8;
+  padding: 0.9rem 1.1rem;
   border-radius: 0.6rem;
   font-size: 0.95rem;
+  border: 1px solid #e6e6e6;
 }
 
-/* Lugar */
+/* ---------------------- LUGAR ---------------------- */
 .evento-lugar {
   width: 90%;
   margin: 2rem auto;
-  background: #ffffff;
+  background: #fff;
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1.7rem;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.evento-lugar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .evento-lugar__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
 }
 
 .evento-lugar__grid div {
-  background: #f9f9f9;
-  padding: 0.8rem 1rem;
+  background: #f8f8f8;
+  padding: 0.9rem 1.1rem;
   border-radius: 0.6rem;
   font-size: 0.95rem;
+  border: 1px solid #e6e6e6;
 }
 
-/* Botón volver */
+/* ---------------------- BOTÓN VOLVER ---------------------- */
 .btn-volver {
-  width: 100px;
   display: block;
-  margin: 2rem auto 0;
+  margin: 2.5rem auto 0;
   background: #222;
   color: #fff;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.7rem;
+  font-size: 1rem;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.25s ease, transform 0.1s ease;
 }
 
 .btn-volver:hover {
-  background: #444;
+  background: #333;
+  transform: scale(1.03);
 }
 
-/* Estados */
+/* ---------------------- ESTADOS ---------------------- */
 .evento-error {
   text-align: center;
   padding: 4rem 1rem;
   font-size: 1.2rem;
   color: #666;
+}
+
+/* ---------------------- RESPONSIVE ---------------------- */
+@media (max-width: 600px) {
+  .evento-banner {
+    height: 260px;
+  }
+
+  .evento-banner__title {
+    font-size: 1.8rem;
+  }
+
+  .evento-banner__rango {
+    font-size: 0.95rem;
+  }
 }

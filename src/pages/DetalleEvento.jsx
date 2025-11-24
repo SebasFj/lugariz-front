@@ -28,7 +28,7 @@ export const DetalleEvento = () => {
   }, [id]);
 
   const finalizarEvento = async () => {
-    if (!window.confirm("¿Deseas finalizar este evento?")) return;
+    if (evento.id_estado === 1 && !window.confirm("¿Deseas finalizar este evento?")) return;
     try {
       const res = await fetch(`${API_URL}/api/eventos/${id_evento}/state`, {
         method: "PUT",
@@ -56,14 +56,16 @@ export const DetalleEvento = () => {
         <h1>{evento.nombre}</h1>
         <div className="detalle-evento-buttons">
           <button
-            className="btn"
+            className="btn btn--primary"
             onClick={() => navigate(`/usuario/sitios/detalle_sitio/${id}/editar_evento/${id_evento}`)}
           >
             ✏️ Editar
           </button>
+          {evento.id_estado === 1 && (
           <button className="btn btn--danger" onClick={finalizarEvento} hidden={evento.id_estado === 1 ? false : true}>
             🔒 Finalizar
           </button>
+          )}
           <button
             className="btn btn--outline"
             onClick={() => navigate(-1)}

@@ -29,3 +29,8 @@
 .login-title {
     color: #000000
 }
+
+.login-btn-wrapper {
+  width: 100%;
+  margin-top: 10px;
+}

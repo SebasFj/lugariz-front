@@ -19,7 +19,7 @@ export default function Card({
   like,
   fav,
   calificacion,
-  fav_btn
+  fav_btn,
 }) {
   const {
     nombre,
@@ -127,7 +127,10 @@ export default function Card({
             <>
               <div className="todos">
                 <div className="rating">
-                  <Rating value={calificacion} onRate={(newValue) => onCalificar(newValue)}/>
+                  <Rating
+                    value={calificacion}
+                    onRate={(newValue) => onCalificar(newValue)}
+                  />
                 </div>
                 <div className="btns">
                   <button className="btn--icon" onClick={onLike}>
@@ -185,13 +188,14 @@ export default function Card({
               <button className="btn btn--small" onClick={onEditar}>
                 Editar
               </button>
-              <button
-                className="btn btn--outline btn--small"
-                hidden={Estado.id === 1 ? false : true}
-                onClick={onFinalizar}
-              >
-                Finalizar
-              </button>
+              {Estado.id === 1 && (
+                <button
+                  className="btn btn--outline btn--small"
+                  onClick={onFinalizar}
+                >
+                  Finalizar
+                </button>
+              )}
             </>
           )}
         </div>

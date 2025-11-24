@@ -3,65 +3,97 @@
   padding: 20px 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
+  box-sizing: border-box;
 }
+
+/* ===== FILTROS ===== */
 
 .evu-filtros {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 15px;
-  height: 100px;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
 }
 
+/* Inputs base */
 .evu-buscador,
 .evu-input-fecha,
 .evu-select-edad {
-  padding: 10px;
+  padding: 12px 14px;
   border-radius: 10px;
   border: 1px solid #d1d5db;
   font-size: 15px;
+  background: white;
+  transition: all 0.2s ease;
 }
 
-.evu-buscador{
-    height: 50px;
-    margin-top: 20px;
+.evu-buscador {
+  flex: 1;
+  min-width: 220px;
 }
 
+.evu-buscador:focus,
+.evu-input-fecha:focus,
+.evu-select-edad:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 4px #93c5fd;
+}
+
+/* Fecha */
+.fecha {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.evu-label-fecha {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Edad + botón */
+.edad-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Botón reset */
 .evu-btn-reset {
-  padding: 8px;
+  padding: 10px;
   border-radius: 10px;
   border: none;
   background: #ef4444;
   color: white;
+  font-size: 14px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
+
+.evu-btn-reset:hover {
+  background: #b91c1c;
+}
+
+/* ===== CARDS GRID ===== */
 
 .evu-cards-grid {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
+/* Cuando no hay resultados */
 .evu-no-result {
   grid-column: 1 / -1;
   text-align: center;
   color: #6b7280;
   font-size: 18px;
-}
-
-
-.edad-btn{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.fecha {
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    justify-content: space-around;
+  padding: 40px;
 }

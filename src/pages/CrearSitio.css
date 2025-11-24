@@ -136,3 +136,50 @@
   text-align: center;
   margin-top: 15px;
 }
+
+
+/* --- Corrección para alineación de los botones de categorías --- */
+
+.categorias-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Fuerza tamaño fijo y alineación */
+.categoria-btn {
+  min-width: 120px;       /* ancho uniforme */
+  height: 40px;           /* altura uniforme */
+  display: flex;
+  align-items: center;    /* centra vertical */
+  justify-content: center;/* centra horizontal */
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.categoria-btn.selected {
+  background: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.categoria-btn:hover {
+  background: #e0e0e0;
+}
+
+/* --- Para asegurar que las columnas tengan misma altura --- */
+.form-left,
+.form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Por si la grid genera alturas irregulares */
+.horarios-grid {
+  align-items: start;
+}

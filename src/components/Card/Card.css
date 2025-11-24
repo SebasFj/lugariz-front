@@ -1,30 +1,33 @@
-/* ==== CARD GENERAL ==== */
+/* =========================================================
+   CARD GENERAL — Lugariz Styling v2
+   ========================================================= */
 .card-item {
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
   cursor: pointer;
   width: 100%;
-  max-width: 360px;
-  margin: 12px auto;
-  border: solid;
-  border-width: 0.5px;
+  max-width: 380px;
+  margin: 16px auto;
+  border: 1px solid #e5e7eb;
 }
 
 .card-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.12);
 }
 
-/* ==== IMAGEN ==== */
+/* =========================================================
+   IMAGEN
+   ========================================================= */
 .card-item__img-wrap {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 210px;
   overflow: hidden;
 }
 
@@ -32,35 +35,41 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.45s ease;
 }
 
 .card-item__img-wrap:hover .card-item__img {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
-/* ==== BODY ==== */
+/* =========================================================
+   BODY
+   ========================================================= */
 .card-item__body {
-  padding: 16px 20px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  flex:1;
 }
 
-/* ==== TITULO ==== */
+/* =========================================================
+   TITULO
+   ========================================================= */
 .card-item__title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 4px;
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #222;
 }
 
-/* ==== INFO ==== */
+/* =========================================================
+   INFO
+   ========================================================= */
 .card-item__info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: 0.95rem;
+  gap: 6px;
+  font-size: 0.98rem;
   color: #555;
 }
 
@@ -68,103 +77,115 @@
   color: #222;
 }
 
-/* ==== ACCIONES ==== */
+/* =========================================================
+   ACCIONES
+   ========================================================= */
 .card-item__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: auto;
 }
 
+/* =========================================================
+   BOTONES GENERALES
+   ========================================================= */
+
 .btn {
-  background-color: #0078ff;
+  background-color: #4a6cf7;
   color: white;
   border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background-color 0.24s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  background-color: #005fd1;
+  background-color: #3b59d7;
+  transform: translateY(-2px);
 }
 
-/* ==== BTN VARIACIONES ==== */
+/* Variantes */
 .btn--outline {
   background: transparent;
-  border: 2px solid #0078ff;
-  color: #0078ff;
+  border: 2px solid #4a6cf7;
+  color: #4a6cf7;
 }
 
 .btn--outline:hover {
-  background: #0078ff;
+  background: #4a6cf7;
   color: #fff;
 }
 
 .btn--small {
-  padding: 6px 10px;
+  padding: 7px 12px;
   font-size: 0.85rem;
 }
 
-/* ==== ICONOS ==== */
-.btn--icon {
-  background: #f1f3f5;
-  color: #333;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  border: none;
-}
+/* =========================================================
+   BOTONES DE ICONO (LIKE / FAVORITO / ETC.)
+   ========================================================= */
 
+.btn--icon,
 .btn--fav {
-  background: #2088f0;
-  color: #333;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.btns {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  box-sizing: border-box;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.rating{
-  width: 100%;
-  justify-items: left;
-}
-
-.todos{
-  width: 100%;
+.btn--icon {
+  background: #f2f4f7;
+  color: #555;
 }
 
 .btn--icon:hover {
-  background: #e1e5ea;
-  transform: scale(1.1);
+  background: #e3e6eb;
+  transform: scale(1.12);
 }
 
+.btn--fav {
+  background: #ffb34a;
+  color: #fff;
+}
 
 .btn--fav:hover {
-  background: #005fd1;
-  transform: scale(1.1);
+  background: #e99c36;
+  transform: scale(1.12);
 }
 
-/* ==== RESPONSIVE ==== */
+/* =========================================================
+   CONTENEDORES AUXILIARES
+   ========================================================= */
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.rating {
+  width: 100%;
+}
+
+.todos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 768px) {
   .card-item {
     max-width: 100%;
