@@ -23,19 +23,19 @@ export default function Home() {
         >
           🎉 Eventos
         </button>
-        <button
+        {/* <button
           className={`sidebar-btn ${tab === "recomendados" ? "active" : ""}`}
           onClick={() => setTab("recomendados")}
         >
           💡 Sitios para ti
-        </button>
+        </button> */}
       </aside>
 
       {/* ---------- CONTENIDO PRINCIPAL ---------- */}
       <main className="content">
         {tab === "sitios" && <SitiosView fav={false}/>}
         {tab === "eventos" && <EventosView/>}
-        {tab === "recomendados" && <RecomendadosView/>}
+        {/* {tab === "recomendados" && <RecomendadosView/>} */}
       </main>
     </div>
   );
