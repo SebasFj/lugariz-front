@@ -4,7 +4,7 @@ import "./CrearEvento.css";
 import {API_URL} from "../config/api.js"
 
 export const CrearEvento = () => {
-  const { id, id_evento } = useParams(); // id del sitio y del evento
+  const { id, id_evento } = useParams(); 
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -22,7 +22,8 @@ export const CrearEvento = () => {
   const [loading, setLoading] = useState(false);
   const [mensaje, setMensaje] = useState(null);
 
-  // 🧭 Cargar datos si estamos en modo edición
+  const hoy = new Date().toISOString().split("T")[0];
+
   useEffect(() => {
     if (modoEdicion && id_evento) {
       const fetchEvento = async () => {
@@ -49,17 +50,32 @@ export const CrearEvento = () => {
     }
   }, [modoEdicion, id_evento]);
 
-  // 📝 Manejador de cambios
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // ⛔ Si toca fecha_fin sin haber definido fecha_inicio → no permitir
+    if (name === "fecha_fin" && !formData.fecha_inicio) return;
+
     setFormData({ ...formData, [name]: value });
   };
 
-  // 🚀 Guardar o actualizar evento
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setMensaje(null);
+
+    // Validaciones extra de seguridad antes de enviar:
+    if (formData.fecha_inicio < hoy) {
+      setMensaje("❌ La fecha de inicio no puede ser anterior a hoy");
+      setLoading(false);
+      return;
+    }
+
+    if (formData.fecha_fin < formData.fecha_inicio) {
+      setMensaje("❌ La fecha final debe ser posterior a la fecha de inicio");
+      setLoading(false);
+      return;
+    }
 
     try {
       const url = modoEdicion
@@ -132,6 +148,7 @@ export const CrearEvento = () => {
               type="date"
               name="fecha_inicio"
               value={formData.fecha_inicio}
+              min={hoy}        // 🚀 NO puede ser menor a hoy
               onChange={handleChange}
               required
             />
@@ -143,6 +160,8 @@ export const CrearEvento = () => {
               type="date"
               name="fecha_fin"
               value={formData.fecha_fin}
+              min={formData.fecha_inicio || hoy} // 🚀 Debe ser > inicio
+              disabled={!formData.fecha_inicio} // ⛔ No editable sin inicio
               onChange={handleChange}
               required
             />
@@ -176,4 +195,4 @@ export const CrearEvento = () => {
       </button>
     </div>
   );
-}
+};
