@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { updateUser } from "../../features/auth/authSlice.js";
-import {API_URL} from "../../config/api.js"
+import { API_URL } from "../../config/api.js";
 
 export default function SitiosView({ fav }) {
   const [data, setData] = useState([]);
@@ -50,9 +50,12 @@ export default function SitiosView({ fav }) {
       console.error("❌ Error cargando sitios o categorías:", err);
     }
   }
-  useEffect(() => {
-     fetchData();
-  }, fav ? [favList] : []);
+  useEffect(
+    () => {
+      fetchData();
+    },
+    fav ? [favList] : []
+  );
 
   useEffect(() => {
     setLikedList(new Set(user?.sitiosLikeados?.map((s) => s.id_sitio) || []));
@@ -175,10 +178,10 @@ export default function SitiosView({ fav }) {
           : user.favoritos.filter((s) => s.id_sitio !== id_sitio),
       };
       dispatch(updateUser(newUser));
-      if (fav){
-        const newFavList = new Set([...favList])
-        newFavList.delete(id_sitio)
-        setFavList(newFavList)
+      if (fav) {
+        const newFavList = new Set([...favList]);
+        newFavList.delete(id_sitio);
+        setFavList(newFavList);
       }
     } catch (error) {
       console.error("Error al agregar a favoritos:", error);
@@ -187,14 +190,11 @@ export default function SitiosView({ fav }) {
 
   const handleCalificar = async (id_sitio, rating) => {
     try {
-      const nuevo_rating = await axios.post(
-        `${API_URL}/api/sitios/calificar`,
-        {
-          id_sitio,
-          id_usuario: user.id,
-          rating,
-        }
-      );
+      const nuevo_rating = await axios.post(`${API_URL}/api/sitios/calificar`, {
+        id_sitio,
+        id_usuario: user.id,
+        rating,
+      });
       const new_data = [...data];
       for (let sitio of new_data) {
         if (sitio.id === id_sitio) {
@@ -228,6 +228,28 @@ export default function SitiosView({ fav }) {
 
   return (
     <div className="sitios-usuario">
+      <div className="filtros-categorias">
+        <label>Categorías</label>
+        <div className="categorias-box">
+          {categorias.map((c) => (
+            <button
+              key={c.id}
+              className={`categoria-btn ${
+                categoria.includes(c.nombre) ? "active" : ""
+              }`}
+              onClick={() =>
+                setCategoria((prev) =>
+                  prev.includes(c.nombre)
+                    ? prev.filter((x) => x !== c.nombre)
+                    : [...prev, c.nombre]
+                )
+              }
+            >
+              {c.nombre}
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="filtros-container">
         <input
           type="text"
@@ -236,29 +258,6 @@ export default function SitiosView({ fav }) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-
-        <div className="filtros-categorias">
-          <label>Categorías</label>
-          <div className="categorias-box">
-            {categorias.map((c) => (
-              <button
-                key={c.id}
-                className={`categoria-btn ${
-                  categoria.includes(c.nombre) ? "active" : ""
-                }`}
-                onClick={() =>
-                  setCategoria((prev) =>
-                    prev.includes(c.nombre)
-                      ? prev.filter((x) => x !== c.nombre)
-                      : [...prev, c.nombre]
-                  )
-                }
-              >
-                {c.nombre}
-              </button>
-            ))}
-          </div>
-        </div>
 
         <label className="pet-checkbox">
           <input
@@ -327,7 +326,7 @@ export default function SitiosView({ fav }) {
               like={likedList.has(s.id)}
               fav={favList.has(s.id)}
               calificacion={rateList.has(s.id) ? getCalificacion(s.id) : 0}
-              fav_btn = {!fav}
+              fav_btn={!fav}
             />
           ))
         )}
